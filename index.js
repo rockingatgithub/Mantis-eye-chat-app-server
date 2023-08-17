@@ -10,6 +10,8 @@ const io = new Server(server, {
 });
 
 
+// room1, room2, room3
+
 io.on('connection', (socket) => {
     console.log('a user connected', socket.id);
     
@@ -19,7 +21,7 @@ io.on('connection', (socket) => {
 
     socket.on('message', data => {
         console.log("Message from frontend", data)
-        io.emit('message_back', data)
+        io.emit('message_back' + 'room1', data)
     })
 
   });
